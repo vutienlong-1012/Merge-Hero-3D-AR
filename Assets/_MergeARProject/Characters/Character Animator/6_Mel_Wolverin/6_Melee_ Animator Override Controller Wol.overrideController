@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 6_Melee_ Animator Override Controller Wol
+  m_Controller: {fileID: 9100000, guid: d6fde988ff8f9ad4db8af73ce7a09962, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ca3d2b80ad4f3d144905f7efdba7b462, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 77e44b2badd654042bb83526b0f7075d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4c656e0554e04684ebaf2e8faa9d8f83, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d6f922e28036c4a44ac07c365e38aa6e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bebf4c9a211d776418232177007b8fe7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f785327503203084390c1c5a61301b90, type: 2}
