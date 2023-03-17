@@ -99,10 +99,10 @@ namespace MergeAR
 
         }
 
-        void HandleAttackCastle()
-        {
+        //void HandleAttackCastle()
+        //{
 
-        }
+        //}
 
         void HandleLose()
         {
