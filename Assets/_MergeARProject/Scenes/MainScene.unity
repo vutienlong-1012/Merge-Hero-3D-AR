@@ -22367,6 +22367,9 @@ MonoBehaviour:
   - screenWidth: 21
     screenHeight: 9
     canvasScalerMatch: 1
+  - screenWidth: 9
+    screenHeight: 16
+    canvasScalerMatch: 1
 --- !u!114 &716444843
 MonoBehaviour:
   m_ObjectHideFlags: 0

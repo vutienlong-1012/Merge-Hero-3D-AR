@@ -10,13 +10,13 @@ namespace MergeAR
 {
     public class CursorControl : Singleton<CursorControl>
     {
-        [SerializeField] Cursor cursor;
+        public Cursor cursor;
         [SerializeField] ARRaycastManager aRRaycastManager;
         [SerializeField] Camera cam;
-        [SerializeField] public bool isARRaycast;
+        [ReadOnly] public bool isARRaycast;
 
         Pose placementPose;
-        [ShowInInspector,ReadOnly]
+        [ShowInInspector, ReadOnly]
         public Pose PlacementPose
         {
             get => placementPose;
@@ -24,7 +24,7 @@ namespace MergeAR
         }
 
         bool isCursorPlacementValid;
-        [ShowInInspector,ReadOnly]
+        [ShowInInspector, ReadOnly]
         public bool IsCursorPlacementValid
         {
             get => isCursorPlacementValid;

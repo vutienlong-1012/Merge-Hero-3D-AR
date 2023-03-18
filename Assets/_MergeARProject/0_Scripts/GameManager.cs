@@ -72,7 +72,7 @@ namespace MergeAR
                 0,
                 () => State = GameState.WaitToPlaceEnvironment,
                 null,
-                null, 
+                null,
                 () => State = GameState.Idle);
         }
 
@@ -80,11 +80,13 @@ namespace MergeAR
         {
             EnvironmentManager.instance.SetActiveEnvironment(false);
             CursorControl.instance.isARRaycast = true;
+            CursorControl.instance.cursor.SetScale(Vector3.one);
         }
         void HandleIdleState()
         {
             uIManager.ShowPopup(uIManager.homePopup);
             CursorControl.instance.isARRaycast = false;
+            CursorControl.instance.cursor.SetScale(EnvironmentManager.instance.EnvironmentScale);
         }
         void HandleChoosingNodeState()
         {

@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,13 @@ namespace MergeAR
 {
     public class EnvironmentManager : Singleton<EnvironmentManager>
     {
-        [SerializeField]public GameObject environment;
+        public GameObject environment;
 
+        [ShowInInspector]
+        public Vector3 EnvironmentScale
+        {
+            get => environment.transform.localScale;
+        }
         public void SetActiveEnvironment(bool _isActive)
         {
             environment.SetActive(_isActive);

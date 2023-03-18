@@ -30,13 +30,13 @@ namespace MergeAR.UI
         {
             UIManager.Instance.ShowPopup
                 (
-                UIManager.Instance.settingPopup,
-                null,
-                0,
+                _popup: UIManager.Instance.settingPopup,
+                _data: null,
+                _delay: 0,
                 _actionOnStartShow: () => UIManager.Instance.HidePopup(UIManager.Instance.homePopup),
-                null,
+                _actionOnCompleteShow: null,
                 _actionOnStartHide: () => UIManager.Instance.ShowPopup(UIManager.Instance.homePopup),
-                null
+                _actionOnCompleteHide: null
                 );
         }
         void SetupMapButtonOnClick()

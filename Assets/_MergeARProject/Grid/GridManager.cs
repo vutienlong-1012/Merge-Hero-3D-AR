@@ -12,7 +12,7 @@ namespace MergeAR
         [SerializeField] int columns = 4;
         [SerializeField] float spacing = 1.0f;
 
-        [SerializeField] Transform frienlyGridsParent;
+        [SerializeField] Transform friendlyGridsParent;
         [SerializeField] Transform enemyGridsParent;
         [SerializeField] GameObject friendlyGridPrefab;
         [SerializeField] GameObject enemyGridPrefab;
@@ -29,7 +29,7 @@ namespace MergeAR
             float _startZ = -_height / 2 + spacing / 2;
 
 
-            Helpers.DestroyAllChilds(frienlyGridsParent.gameObject);
+            Helpers.DestroyAllChilds(friendlyGridsParent.gameObject);
             Helpers.DestroyAllChilds(enemyGridsParent.gameObject);
 
             // loop through each row and column, and create a cube at the appropriate position
@@ -44,13 +44,13 @@ namespace MergeAR
                     // instantiate a new cube at the calculated position
                     GameObject _f = Instantiate(friendlyGridPrefab, new Vector3(_x, 0, _z), Quaternion.identity);
 
-                    // set the cube as a child of this gameobject (for organization purposes)
-                    _f.transform.parent = frienlyGridsParent;
+                    // set the cube as a child of this game object (for organization purposes)
+                    _f.transform.parent = friendlyGridsParent;
 
                     // instantiate a new cube at the calculated position
                     GameObject _e = Instantiate(enemyGridPrefab, new Vector3(_x, 0, _z), Quaternion.identity);
 
-                    // set the cube as a child of this gameobject (for organization purposes)
+                    // set the cube as a child of this game object (for organization purposes)
                     _e.transform.parent = enemyGridsParent;
                 }
             }
