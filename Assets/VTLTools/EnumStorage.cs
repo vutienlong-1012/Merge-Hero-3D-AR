@@ -27,4 +27,12 @@ namespace VTLTools
         Hidden,
     }
 
+    public enum GridState
+    {
+        None,
+        Empty,
+        Waiting,
+        Chosen,
+    }
+
 }

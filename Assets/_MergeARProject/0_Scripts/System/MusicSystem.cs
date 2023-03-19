@@ -30,7 +30,7 @@ namespace MergeAR
             }
         }
 
-        public void ToggeMusic()
+        public void ToggleMusic()
         {
             StaticVariables.IsMusicOn = !StaticVariables.IsMusicOn;
             musicAudioSource.mute = !StaticVariables.IsMusicOn;

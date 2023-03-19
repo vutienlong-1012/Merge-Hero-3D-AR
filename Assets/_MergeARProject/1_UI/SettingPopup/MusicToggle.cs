@@ -14,7 +14,7 @@ namespace MergeAR.UI
             musicToggle.isOn = StaticVariables.IsMusicOn;
             musicToggle.onValueChanged.AddListener(delegate
             {
-                MusicSystem.Instance.ToggeMusic();
+                MusicSystem.Instance.ToggleMusic();
                 SoundSystem.Instance.PlayUIClick();
                 VibrationSystem.Instance.PlayVibration();
             });
@@ -23,7 +23,7 @@ namespace MergeAR.UI
         {
             musicToggle.onValueChanged.RemoveListener(delegate
             {
-                MusicSystem.Instance.ToggeMusic();
+                MusicSystem.Instance.ToggleMusic();
                 SoundSystem.Instance.PlayUIClick();
                 VibrationSystem.Instance.PlayVibration();
 

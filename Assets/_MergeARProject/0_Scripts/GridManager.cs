@@ -1,12 +1,11 @@
 using Sirenix.OdinInspector;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VTLTools;
 
 namespace MergeAR
 {
-    public class GridManager : MonoBehaviour
+    public class GridManager : SerializedMonoBehaviour
     {
         [SerializeField] int rows = 5;
         [SerializeField] int columns = 4;
@@ -14,12 +13,19 @@ namespace MergeAR
 
         [SerializeField] Transform friendlyGridsParent;
         [SerializeField] Transform enemyGridsParent;
-        [SerializeField] GameObject friendlyGridPrefab;
-        [SerializeField] GameObject enemyGridPrefab;
+        [SerializeField] FriendlyGrid friendlyGridPrefab;
+        [SerializeField] EnemyGrid enemyGridPrefab;
+
+        [ReadOnly] public List<FriendlyGrid> friendlyGrids;
+        [ReadOnly] public List<EnemyGrid> enemyGrids;
 
         [Button]
-        public void SpawnGrid()
+        public void SpawnAllGrid()
         {
+            //Clear List
+            friendlyGrids.Clear();
+            enemyGrids.Clear();
+
             // calculate the total size of the grid based on the number of rows, columns, and spacing
             float _width = columns * spacing;
             float _height = rows * spacing;
@@ -42,19 +48,27 @@ namespace MergeAR
                     float _z = _startZ + _row * spacing;
 
                     // instantiate a new cube at the calculated position
-                    GameObject _f = Instantiate(friendlyGridPrefab, new Vector3(_x, 0, _z), Quaternion.identity);
+                    Grid _friendlyGrid = SpawnSingleGrid(friendlyGridPrefab, new Vector3(_x, 0, _z), friendlyGridsParent, _col, _row);
+                    friendlyGrids.Add(_friendlyGrid as FriendlyGrid);
 
-                    // set the cube as a child of this game object (for organization purposes)
-                    _f.transform.parent = friendlyGridsParent;
-
-                    // instantiate a new cube at the calculated position
-                    GameObject _e = Instantiate(enemyGridPrefab, new Vector3(_x, 0, _z), Quaternion.identity);
-
-                    // set the cube as a child of this game object (for organization purposes)
-                    _e.transform.parent = enemyGridsParent;
+                    Grid _enemyGrid = SpawnSingleGrid(enemyGridPrefab, new Vector3(_x, 0, _z), enemyGridsParent, _col, _row);
+                    enemyGrids.Add(_enemyGrid as EnemyGrid);
                 }
             }
+        }
 
+
+        Grid SpawnSingleGrid(Grid _grid, Vector3 _localPosition, Transform _parent, int _col, int _row)
+        {
+            // instantiate a new cube at the calculated position
+            _grid = Instantiate(_grid);
+
+            // set the cube as a child of this game object (for organization purposes)
+            _grid.transform.parent = _parent;
+            _grid.transform.localPosition = _localPosition;
+            _grid.transform.rotation = Quaternion.identity;
+            _grid.name = _grid.name + _col + _row;
+            return _grid;
         }
     }
 }
