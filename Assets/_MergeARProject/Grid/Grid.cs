@@ -9,10 +9,11 @@ using DG.Tweening;
 
 namespace MergeAR
 {
+    [Serializable]
     public class Grid : MonoBehaviour
     {
         public Character currentCharacter;
-        public GridState gridState;        
+        public GridState gridState;
     }
 }
 

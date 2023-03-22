@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1_Melee_ Animator Override Controller Base
+  m_Name: _Melee_ Animator Override Controller Base
   m_Controller: {fileID: 9100000, guid: d6fde988ff8f9ad4db8af73ce7a09962, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: ca3d2b80ad4f3d144905f7efdba7b462, type: 2}

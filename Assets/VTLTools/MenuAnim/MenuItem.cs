@@ -13,7 +13,7 @@ namespace VTLTools.UIAnimation
         [Button, BoxGroup("Time setting")] public float TimeShow;
         [Button, BoxGroup("Time setting")] public float TimeHide;
 
-        [ReadOnly] public MenuItemState ThisMenuItemState { get; protected set; }
+        [ShowInInspector, ReadOnly] public MenuItemState ThisMenuItemState { get; protected set; }
 
         public abstract void StartShow();
         public abstract IEnumerator IEStartShow();

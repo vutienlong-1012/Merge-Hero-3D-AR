@@ -11,22 +11,22 @@ namespace VTLTools
         [ShowInInspector]
         public static bool IsSoundOn
         {
-            get => VTLPlayerPrefs.GetBool(StringsSafeAccess.PREF_IS_SOUND_ON, true);
-            set => VTLPlayerPrefs.SetBool(StringsSafeAccess.PREF_IS_SOUND_ON, value);
+            get => VTLPlayerPrefs.GetBool(StringsSafeAccess.PREF_KEY_IS_SOUND_ON, true);
+            set => VTLPlayerPrefs.SetBool(StringsSafeAccess.PREF_KEY_IS_SOUND_ON, value);
         }
 
         [ShowInInspector]
         public static bool IsMusicOn
         {
-            get => VTLPlayerPrefs.GetBool(StringsSafeAccess.PREF_IS_MUSIC_ON, true);
-            set => VTLPlayerPrefs.SetBool(StringsSafeAccess.PREF_IS_MUSIC_ON, value);
+            get => VTLPlayerPrefs.GetBool(StringsSafeAccess.PREF_KEY_IS_MUSIC_ON, true);
+            set => VTLPlayerPrefs.SetBool(StringsSafeAccess.PREF_KEY_IS_MUSIC_ON, value);
         }
 
         [ShowInInspector]
         public static bool IsVibrationOn
         {
-            get => VTLPlayerPrefs.GetBool(StringsSafeAccess.PREF_IS_VIBRATION_ON, true);
-            set => VTLPlayerPrefs.SetBool(StringsSafeAccess.PREF_IS_VIBRATION_ON, value);
+            get => VTLPlayerPrefs.GetBool(StringsSafeAccess.PREF_KEY_IS_VIBRATION_ON, true);
+            set => VTLPlayerPrefs.SetBool(StringsSafeAccess.PREF_KEY_IS_VIBRATION_ON, value);
         }
 
         [ShowInInspector]

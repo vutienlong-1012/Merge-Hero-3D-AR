@@ -12,7 +12,6 @@ namespace MergeAR
         [SerializeField] LayerMask friendlyGridLayerMask;
         [SerializeField] Camera cam;
         [SerializeField, ReadOnly] Character chosenCharacter;
-        [SerializeField] Button chooseCharacterButton;
 
         [ShowInInspector]
         FriendlyGrid CenterFriendlyGrid
@@ -57,8 +56,12 @@ namespace MergeAR
 
         public void PickUpCharacter()
         {
-            chosenCharacter = CenterFriendlyGrid.currentCharacter;
+            if (CenterFriendlyGrid == null)
+                return;
+            if (CenterFriendlyGrid.currentCharacter == null)
+                return;
 
+            chosenCharacter = CenterFriendlyGrid.currentCharacter;
             CenterFriendlyGrid.currentCharacter.SetNewParentCharacter(CursorControl.instance.cursor.transform, new Vector3(0, 0.06f, 0));
             CenterFriendlyGrid.currentCharacter = null;
             originFriendlyGrid = CenterFriendlyGrid;
@@ -66,6 +69,9 @@ namespace MergeAR
 
         public void ReleaseCharacter()
         {
+            if (chosenCharacter == null)
+                return;
+
             if (CenterFriendlyGrid != null && CenterFriendlyGrid.currentCharacter == null)
             {
                 chosenCharacter.SetNewParentCharacter(CenterFriendlyGrid.transform, Vector3.zero);

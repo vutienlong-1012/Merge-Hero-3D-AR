@@ -1,24 +1,94 @@
 using Sirenix.OdinInspector;
+using System.IO;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using VTLTools;
+using System;
+using Newtonsoft.Json;
+using UnityEngine.UIElements;
 
 namespace MergeAR
 {
+    [Serializable]
     public class GridManager : SerializedMonoBehaviour
     {
         [SerializeField] int rows = 5;
         [SerializeField] int columns = 4;
         [SerializeField] float spacing = 1.0f;
+        [SerializeField] Character characterPrefab;
 
-        [SerializeField] Transform friendlyGridsParent;
-        [SerializeField] Transform enemyGridsParent;
-        [SerializeField] FriendlyGrid friendlyGridPrefab;
-        [SerializeField] EnemyGrid enemyGridPrefab;
+        [TabGroup("Friendly Grids"), SerializeField] Transform friendlyGridsParent;
+        [TabGroup("Friendly Grids"), SerializeField] FriendlyGrid friendlyGridPrefab;
+        [TabGroup("Friendly Grids"), ReadOnly] public List<FriendlyGrid> friendlyGrids;
+        [ShowInInspector, ReadOnly, TabGroup("Friendly Grids")]
+        string friendlyGridData
+        {
+            get
+            {
+                return PlayerPrefs.GetString(StringsSafeAccess.PREF_KEY_FRIENDLY_GRIDS_DATA, "{}");
+            }
+            set
+            {
+                PlayerPrefs.SetString(StringsSafeAccess.PREF_KEY_FRIENDLY_GRIDS_DATA, value);
+            }
+        }
 
-        [ReadOnly] public List<FriendlyGrid> friendlyGrids;
-        [ReadOnly] public List<EnemyGrid> enemyGrids;
 
+        [TabGroup("Enemy Grids"), SerializeField] Transform enemyGridsParent;
+        [TabGroup("Enemy Grids"), SerializeField] EnemyGrid enemyGridPrefab;
+        [TabGroup("Enemy Grids"), ReadOnly] public List<EnemyGrid> enemyGrids;
+        [TabGroup("Enemy Grids"), ShowInInspector]
+        string enemyGridData;
+
+
+        [Button]
+        private void SaveFriendlyGrids()
+        {
+            List<CharacterID> _friendlyGridIDs = new();
+            foreach (var _item in friendlyGrids)
+            {
+                if (_item.currentCharacter != null)
+                    _friendlyGridIDs.Add(_item.currentCharacter.data.iD);
+                else
+                    _friendlyGridIDs.Add(CharacterID.None);
+            }
+
+            string _jsonStr = JsonConvert.SerializeObject(_friendlyGridIDs);
+
+            PlayerPrefs.SetString(StringsSafeAccess.PREF_KEY_FRIENDLY_GRIDS_DATA, _jsonStr);
+        }
+
+        [Button]
+        private void LoadFriendlyGrids()
+        {
+            if (PlayerPrefs.HasKey(StringsSafeAccess.PREF_KEY_FRIENDLY_GRIDS_DATA))
+            {
+                List<CharacterID> _friendlyGridIDs = new();
+                _friendlyGridIDs = JsonConvert.DeserializeObject<List<CharacterID>>(PlayerPrefs.GetString(StringsSafeAccess.PREF_KEY_FRIENDLY_GRIDS_DATA, "{}"));
+                for (int _i = 0; _i < _friendlyGridIDs.Count; _i++)
+                {
+                    CharacterData _charData = DataManager.Instance.GetCharacterDataByID(_friendlyGridIDs[_i]);
+                    if (_charData != null)
+                    {
+                        SpawnCharacterInGrid(friendlyGrids[_i], _charData);
+                    }
+                }
+                Debug.Log("List loaded!");
+            }
+            else
+                Debug.LogError("File not found!");
+        }
+
+        void SpawnCharacterInGrid(Grid _grid, CharacterData _charData)
+        {
+            _grid.currentCharacter = Instantiate(characterPrefab);
+            _grid.currentCharacter.transform.SetParent(_grid.transform);
+            _grid.currentCharacter.data = _charData;
+            _grid.currentCharacter.transform.localPosition = Vector3.zero;
+        }
+
+        #region Editor function
         [Button]
         public void SpawnAllGrid()
         {
@@ -57,11 +127,10 @@ namespace MergeAR
             }
         }
 
-
         Grid SpawnSingleGrid(Grid _grid, Vector3 _localPosition, Transform _parent, int _col, int _row)
         {
             // instantiate a new cube at the calculated position
-            _grid = Instantiate(_grid);
+            _grid = (Grid)PrefabUtility.InstantiatePrefab(_grid);
 
             // set the cube as a child of this game object (for organization purposes)
             _grid.transform.parent = _parent;
@@ -70,5 +139,6 @@ namespace MergeAR
             _grid.name = _grid.name + _col + _row;
             return _grid;
         }
+        #endregion
     }
 }

@@ -12,6 +12,10 @@ namespace MergeAR.UI
         [SerializeField, BoxGroup("Popup Reference")] protected Button settingButton;
         [SerializeField, BoxGroup("Popup Reference")] protected Button setupMapButton;
 
+        private void OnEnable()
+        {
+
+        }
         protected override void ButtonAddListener()
         {
             base.ButtonAddListener();

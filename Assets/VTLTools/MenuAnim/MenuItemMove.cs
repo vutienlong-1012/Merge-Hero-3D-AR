@@ -23,7 +23,8 @@ namespace VTLTools.UIAnimation
 
         public override void StartShow()
         {
-            StartCoroutine(IEStartShow());
+            if (this.gameObject.activeSelf)
+                StartCoroutine(IEStartShow());
         }
 
         public override IEnumerator IEStartShow()
@@ -39,7 +40,8 @@ namespace VTLTools.UIAnimation
 
         public override void StartHide()
         {
-            StartCoroutine(IEStartHide());
+            if (this.gameObject.activeSelf)
+                StartCoroutine(IEStartHide());
         }
 
         public override IEnumerator IEStartHide()

@@ -9,22 +9,6 @@ namespace MergeAR
     {
         public Animator animator;
 
-        public AnimatorOverrideController overrideController;
-        public string Music_Name_Attack;
-
-        public ParticleSystem spawnEffect;
-        public ParticleSystem dieEffect;
-
-        private void OnEnable()
-        {
-            if (spawnEffect != null)
-                spawnEffect.Play();
-        }
-        private void Start()
-        {
-            animator.runtimeAnimatorController = overrideController;
-        }
-
         public void SetBoolAtk(bool value)
         {
             animator.SetBool("isAttacking", value);
@@ -37,7 +21,6 @@ namespace MergeAR
 
         public void SetTriggerDie()
         {
-            dieEffect.Play();
             animator.SetTrigger("Die");
         }
 
@@ -56,20 +39,9 @@ namespace MergeAR
             animator.SetBool("IsPickedUp", value);
         }
 
-        public void SetTriggerJump(float timeJump)
+        public void SetTriggerJump()
         {
-            Debug.Log(timeJump);
-            Debug.Log((timeJump / 0.792f));
-            animator.speed /= (timeJump / 0.792f);
-            Debug.Log(animator.speed);
-            StartCoroutine(BackToNomalSpeed(timeJump));
             animator.SetTrigger("Jump");
-        }
-
-        IEnumerator BackToNomalSpeed(float time)
-        {
-            yield return new WaitForSeconds(time);
-            animator.speed = 1;
         }
 
         public void SetTriggerDance()

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace VTLTools.UIAnimation
 {
@@ -12,6 +13,12 @@ namespace VTLTools.UIAnimation
     {
         [TableMatrix]
         public List<MenuItem> menuItems;
+
+        //[ShowInInspector]
+        //public bool IsShow
+        //{
+        //    get => this.gameObject.activeSelf;
+        //}
 
         [ShowInInspector, ReadOnly]
         public MenuItemState ThisMenuItemState
