@@ -80,7 +80,8 @@ namespace MergeAR
             {
                 IsCursorPlacementValid = true;
                 _hitPosition = _hit.point;
-                _hitRotation = Quaternion.FromToRotation(Vector3.up, _hit.normal);
+                //_hitRotation = Quaternion.FromToRotation(Vector3.up, _hit.normal);
+                _hitRotation = _hit.collider.gameObject.transform.rotation;
                 PlacementPose = new Pose(_hitPosition, _hitRotation);
             }
             else

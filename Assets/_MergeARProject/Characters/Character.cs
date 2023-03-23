@@ -32,6 +32,7 @@ namespace MergeAR
         {
             this.transform.parent = _parent;
             this.transform.DOLocalMove(_offset, 0.5f);
+            this.transform.DOLocalRotate(Vector3.zero, 0.5f);
         }
     }
 }

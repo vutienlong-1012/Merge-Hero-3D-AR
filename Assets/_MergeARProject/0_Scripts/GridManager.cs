@@ -7,6 +7,13 @@ using VTLTools;
 using System;
 using Newtonsoft.Json;
 using UnityEngine.UIElements;
+using Palmmedia.ReportGenerator.Core;
+using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.Rendering.DebugUI;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
+using System.Collections;
+using System.Linq;
+using Unity.VisualScripting;
 
 namespace MergeAR
 {
@@ -41,7 +48,7 @@ namespace MergeAR
         [TabGroup("Enemy Grids"), ShowInInspector]
         string enemyGridData;
 
-
+        #region Friendly Zone
         [Button]
         private void SaveFriendlyGrids()
         {
@@ -68,7 +75,7 @@ namespace MergeAR
                 _friendlyGridIDs = JsonConvert.DeserializeObject<List<CharacterID>>(PlayerPrefs.GetString(StringsSafeAccess.PREF_KEY_FRIENDLY_GRIDS_DATA, "{}"));
                 for (int _i = 0; _i < _friendlyGridIDs.Count; _i++)
                 {
-                    CharacterData _charData = DataManager.Instance.GetCharacterDataByID(_friendlyGridIDs[_i]);
+                    CharacterData _charData = CharacterDataManager.Instance.GetCharacterDataByID(_friendlyGridIDs[_i]);
                     if (_charData != null)
                     {
                         SpawnCharacterInGrid(friendlyGrids[_i], _charData);
@@ -79,13 +86,41 @@ namespace MergeAR
             else
                 Debug.LogError("File not found!");
         }
+        #endregion
+
+        #region Enemy Zone   
+        [Button]
+        // method to solve minimum coin exchange problem
+        public List<int> SolveMinimumCoinExchange(List<int> coinValues, int targetValue)
+        {
+            coinValues.Sort();
+
+            List<int> coinsUsed = new List<int>(); // list to store the coins used
+            int remainingValue = targetValue; // remaining value to be reached
+
+            // iterate through the coin values from highest to lowest
+            for (int i = coinValues.Count - 1; i >= 0; i--)
+            {
+                // check if the coin value is less than or equal to the remaining value
+                while (coinValues[i] <= remainingValue)
+                {
+                    coinsUsed.Add(coinValues[i]); // add the coin to the list of coins used
+                    remainingValue -= coinValues[i]; // subtract the coin value from the remaining value
+                }
+            }
+
+            return coinsUsed; // return the list of coins used
+            #endregion
+        }
 
         void SpawnCharacterInGrid(Grid _grid, CharacterData _charData)
         {
             _grid.currentCharacter = Instantiate(characterPrefab);
+            _grid.currentCharacter.transform.localScale = EnvironmentManager.Instance.EnvironmentScale;
             _grid.currentCharacter.transform.SetParent(_grid.transform);
             _grid.currentCharacter.data = _charData;
             _grid.currentCharacter.transform.localPosition = Vector3.zero;
+            _grid.currentCharacter.transform.localRotation = Quaternion.identity;
         }
 
         #region Editor function

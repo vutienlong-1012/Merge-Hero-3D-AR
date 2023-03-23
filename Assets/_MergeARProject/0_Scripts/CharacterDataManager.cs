@@ -4,7 +4,7 @@ using VTLTools;
 
 namespace MergeAR
 {
-    public class DataManager : Singleton<DataManager>
+    public class CharacterDataManager : Singleton<CharacterDataManager>
     {
         [ShowInInspector] public List<CharacterData> characterDatas = new();
 
@@ -14,7 +14,10 @@ namespace MergeAR
             foreach (var _item in characterDatas)
             {
                 if (_id == _item.iD)
+                {
                     _char = _item;
+                    break;
+                }
             }
             return _char;
         }
