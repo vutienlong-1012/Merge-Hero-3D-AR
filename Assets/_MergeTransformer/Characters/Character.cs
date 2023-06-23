@@ -206,14 +206,16 @@ namespace MergeAR
             skinnedMeshRenderer.sharedMesh = data.mesh;
             skinnedMeshRenderer.material = data.material;
 
-            Vector3 _scale = new Vector3(0.5f, 0.5f, 0.5f) + new Vector3(0.02f, 0.02f, 0.02f) * data.scaleLevel;
+            Vector3 _scale = Vector3.one + new Vector3(0.04f, 0.04f, 0.04f) * data.scaleLevel;
+            this.transform.localScale = Vector3.zero;
+            this.transform.DOScale(_scale, 0.5f);
+
+
             motionController.animator.Rebind();
             motionController.animator.Update(0);
-            model.transform.localScale = Vector3.zero;
-            model.transform.DOScale(_scale, 0.5f);
+
+
             model.transform.localPosition = Vector3.zero;
-
-
 
             motionController.animator.runtimeAnimatorController = data.animatorOverrideController;
 

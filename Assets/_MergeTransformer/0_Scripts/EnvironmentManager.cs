@@ -15,6 +15,9 @@ namespace MergeAR
         {
             get => this.transform.localScale;
         }
+
+        public float ScaleValue => this.transform.localScale.x;
+
         public void SetActiveEnvironment(bool _isActive)
         {
             environment.SetActive(_isActive);
