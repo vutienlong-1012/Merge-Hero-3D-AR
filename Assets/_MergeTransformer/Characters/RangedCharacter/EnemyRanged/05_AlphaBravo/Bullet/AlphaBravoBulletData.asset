@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd71a430d0ab798458b2e013119498d4, type: 3}
+  m_Name: AlphaBravoBulletData
+  m_EditorClassIdentifier: 
+  spawnFx: {fileID: -3702699263927978984, guid: a3f0ee6685335064485cb917a9df9190,
+    type: 3}
+  model: {fileID: 0}
+  impactFx: {fileID: -5962176989810649785, guid: 1d42ea01b5fe93647be0f71630d8fccb,
+    type: 3}
+  speed: 30

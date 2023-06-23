@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 10_GundamMelee
+  m_EditorClassIdentifier: 
+  characterName: GundamMelee
+  avatar: {fileID: 0}
+  description: 
+  iD: 22
+  mesh: {fileID: 4777959039552276524, guid: 36c60418202ba094cbafd7c733076224, type: 3}
+  material: {fileID: 2100000, guid: d5bae2861651ea44880ade7b8e9744a2, type: 2}
+  startHealth: 1
+  speed: 4
+  attackRange: 1.5
+  damage: 0
+  scaleLevel: 10
+  animatorOverrideController: {fileID: 22100000, guid: c870505ac0d4a5d41a7d459df356b45c,
+    type: 2}
+  bullet: {fileID: 0}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 596554859, guid: 55b00f0dc55e88f46bf9db1f3e2aa92b, type: 3}
+  leftWeapon: {fileID: 0}
+  rightWeapon: {fileID: 9029557227265901003, guid: 8405941d3f57fdf49b62bff8b276f2b5,
+    type: 3}

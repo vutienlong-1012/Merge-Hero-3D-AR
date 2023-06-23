@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd71a430d0ab798458b2e013119498d4, type: 3}
+  m_Name: BarricadeBulletData
+  m_EditorClassIdentifier: 
+  spawnFx: {fileID: 4753756688603436335, guid: c02dde978f1896e4c826364fd1b002a7, type: 3}
+  model: {fileID: 0}
+  impactFx: {fileID: 3520546617833368990, guid: e79ed95094be6ec4fabe88ff8c1a3a32,
+    type: 3}
+  speed: 30

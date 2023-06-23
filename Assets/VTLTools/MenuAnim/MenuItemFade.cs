@@ -1,8 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +22,8 @@ namespace VTLTools.UIAnimation
 
         public override void StartShow()
         {
-            StartCoroutine(IEStartShow());
+            if (this.gameObject.activeSelf)
+                StartCoroutine(IEStartShow());
         }
 
         public override IEnumerator IEStartShow()
@@ -36,15 +35,17 @@ namespace VTLTools.UIAnimation
             thisImage.color = _tempColor;
 
             yield return new WaitForSeconds(DelayShow);
-            thisImage.DOFade(showAlpha, TimeShow).SetEase(easeShow);
+            thisImage.DOFade(showAlpha, TimeShow).SetEase(easeShow).OnComplete(() =>
+            {
+                ThisMenuItemState = MenuItemState.Showed;
 
-            ThisMenuItemState = MenuItemState.Showed;
-
+            });
         }
 
         public override void StartHide()
         {
-            StartCoroutine(IEStartHide());
+            if (this.gameObject.activeSelf)
+                StartCoroutine(IEStartHide());
         }
 
         public override IEnumerator IEStartHide()
@@ -52,9 +53,11 @@ namespace VTLTools.UIAnimation
             ThisMenuItemState = MenuItemState.Hiding;
 
             yield return new WaitForSeconds(DelayHide);
-            thisImage.DOFade(hideAlpha, TimeHide).SetEase(easeHide); 
-            
-            ThisMenuItemState = MenuItemState.Hidden;
+            thisImage.DOFade(hideAlpha, TimeHide).SetEase(easeHide).OnComplete(() =>
+            {
+                ThisMenuItemState = MenuItemState.Hidden;
+            });
+
         }
 
         public override void PreviewHide()

@@ -1,7 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace VTLTools.UIAnimation
@@ -10,8 +9,8 @@ namespace VTLTools.UIAnimation
     {
         [Button, BoxGroup("Tween setting")] public Vector3 showScale;
         [Button, BoxGroup("Tween setting")] public Vector3 hideScale;
-        [Button, BoxGroup("Tween setting")] public Ease easeShow = Ease.Linear;
-        [Button, BoxGroup("Tween setting")] public Ease easeHide = Ease.Linear;
+        [Button, BoxGroup("Tween setting")] public AnimationCurve easeShow;
+        [Button, BoxGroup("Tween setting")] public AnimationCurve easeHide;
 
         private RectTransform ThisRectTransform
         {
@@ -32,9 +31,10 @@ namespace VTLTools.UIAnimation
 
             ThisRectTransform.localScale = hideScale;
             yield return new WaitForSeconds(DelayShow);
-            ThisRectTransform.DOScale(showScale, TimeShow).SetEase(easeShow);
-
-            ThisMenuItemState = MenuItemState.Showed;
+            ThisRectTransform.DOScale(showScale, TimeShow).SetEase(easeShow).OnComplete(() =>
+            {
+                ThisMenuItemState = MenuItemState.Showed;
+            });
         }
 
         public override void StartHide()
@@ -47,9 +47,10 @@ namespace VTLTools.UIAnimation
             ThisMenuItemState = MenuItemState.Hiding;
 
             yield return new WaitForSeconds(DelayHide);
-            ThisRectTransform.DOScale(hideScale, TimeHide).SetEase(easeHide);
-
-            ThisMenuItemState = MenuItemState.Hidden;
+            ThisRectTransform.DOScale(hideScale, TimeHide).SetEase(easeHide).OnComplete(() =>
+            {
+                ThisMenuItemState = MenuItemState.Hidden;
+            });
         }
 
         public override void PreviewHide()

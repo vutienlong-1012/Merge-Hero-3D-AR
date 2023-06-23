@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 09_Windblade
+  m_EditorClassIdentifier: 
+  characterName: Windblade
+  avatar: {fileID: 21300000, guid: ff5248183415d874aacd178d9db67768, type: 3}
+  description: 
+  iD: 20
+  mesh: {fileID: 2785660164002556249, guid: c8cf19b9ec95b5f42ba5110750feec22, type: 3}
+  material: {fileID: 2100000, guid: 335e784bc0646c3478016762b331d9b0, type: 2}
+  startHealth: 37800
+  speed: 4
+  attackRange: 1.5
+  damage: 5654
+  scaleLevel: 9
+  animatorOverrideController: {fileID: 22100000, guid: bae6a62f562fa8144aefb1423abc1c84,
+    type: 2}
+  bullet: {fileID: 0}
+  meleeAttackEffect: {fileID: -2639937040811062224, guid: 394c6d8f82e658449b347ef1eb4fec0c,
+    type: 3}
+  meleeImpactEffect: {fileID: 2181716602671001545, guid: ecaac5ab128bb2d4dafd62735afbc9e2,
+    type: 3}
+  leftWeapon: {fileID: 4532744141580626196, guid: 242d26c960813bf40bb7d76c2bc5ac59,
+    type: 3}
+  rightWeapon: {fileID: 4532744141580626196, guid: 242d26c960813bf40bb7d76c2bc5ac59,
+    type: 3}

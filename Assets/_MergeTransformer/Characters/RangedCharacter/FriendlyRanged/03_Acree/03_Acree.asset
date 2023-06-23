@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 03_Acree
+  m_EditorClassIdentifier: 
+  characterName: Acree
+  avatar: {fileID: 21300000, guid: d884e97a519eb964a8d4fa94b8a1152e, type: 3}
+  description: 
+  iD: 35
+  mesh: {fileID: 4593370806455336934, guid: e3ee4d2f2f6aba94b9e3bee12f52a6f7, type: 3}
+  material: {fileID: 2100000, guid: 2f3c3289af3eae14598ca606d176bae4, type: 2}
+  startHealth: 90
+  speed: 4
+  attackRange: 8
+  damage: 46
+  scaleLevel: 3
+  animatorOverrideController: {fileID: 22100000, guid: b2224976b9bee0546926f3ff166411d0,
+    type: 2}
+  bullet: {fileID: 6718104949941453961, guid: a193d28fe31f5f6488ba8f5acfd55bb0, type: 3}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 0}
+  leftWeapon: {fileID: 3319383903160042755, guid: 9f2ca235bdbbfb342a281c7316b26082,
+    type: 3}
+  rightWeapon: {fileID: 3319383903160042755, guid: 9f2ca235bdbbfb342a281c7316b26082,
+    type: 3}

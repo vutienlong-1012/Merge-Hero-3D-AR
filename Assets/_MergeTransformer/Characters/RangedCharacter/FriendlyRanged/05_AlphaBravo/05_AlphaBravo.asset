@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 05_AlphaBravo
+  m_EditorClassIdentifier: 
+  characterName: Alpha Bravo
+  avatar: {fileID: 21300000, guid: a19a9124a11c72644837bcd24e9ede7b, type: 3}
+  description: 
+  iD: 37
+  mesh: {fileID: -8466558595629357006, guid: 71775f2e1f97b5e42af63804b8a082dc, type: 3}
+  material: {fileID: 2100000, guid: 53bcb44a710dc094a806e7a46aaae1d6, type: 2}
+  startHealth: 518
+  speed: 4
+  attackRange: 8
+  damage: 250
+  scaleLevel: 5
+  animatorOverrideController: {fileID: 22100000, guid: b0a9ad0465b28c64b8c74fc596f49a9f,
+    type: 2}
+  bullet: {fileID: 6718104949941453961, guid: 3ed801410f799b140a439dc207f8397d, type: 3}

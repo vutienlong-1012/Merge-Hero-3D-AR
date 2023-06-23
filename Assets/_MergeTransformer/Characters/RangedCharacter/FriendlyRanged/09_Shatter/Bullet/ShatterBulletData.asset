@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd71a430d0ab798458b2e013119498d4, type: 3}
+  m_Name: ShatterBulletData
+  m_EditorClassIdentifier: 
+  spawnFx: {fileID: 4174265794882080687, guid: bf655d86238cac345aad7efa9a0a6af1, type: 3}
+  model: {fileID: 0}
+  impactFx: {fileID: 4672586645871929291, guid: d1239472b5f0e30408b5db182ca529d9,
+    type: 3}
+  speed: 30

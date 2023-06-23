@@ -4,37 +4,20 @@ public enum EventName
 {
     NONE,
 
-    OnAfterStateChanged,
-    OnBeforeStateChanged,
+    OnGameStateChanged,
 
-    OnChangeSkin,
-    OnChangColor,
+    OnHoldCharacter,
+    OnReleaseCharacter,
 
-    selectItemX,
-    SetItemX,
-    UpdateNotifyShop,
-    UpdateNotifySpin,
+    OnBuyCharacter,
+    OnClearGrid,
 
-    OnChooseNode,
-    OnAfterChooseNode,
+    OnCoinValueChange,
+    OnLevelChange,
 
-    OnBeforeBuildChanged,
-    OnAfterBuildChanged,
+    OnFriendlyGridFull,
 
-    OnChosingBonusValue,
-
-    OnMoveEnemy,
-
-    OnChosenNation,
-
-    OnBeforeFightStateChange,
-    OnAfterFightStateChange,
-    
-    OnChangeScene,
-
-    OnBossStartAttack,
-
-    OnFixedUpdate,
+    OnLoadBackground,
 }
 
 public class EventTypeComparer : IEqualityComparer<EventName>

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 09_Shatter
+  m_EditorClassIdentifier: 
+  characterName: Shatter
+  avatar: {fileID: 21300000, guid: 8317dc8c496d6f44386eafa26987bb58, type: 3}
+  description: 
+  iD: 41
+  mesh: {fileID: -5610857078926245472, guid: 0519459abbb927c468809917f9b08484, type: 3}
+  material: {fileID: 2100000, guid: b7abb79faade1154ebec6dc0234e5de1, type: 2}
+  startHealth: 16118
+  speed: 4
+  attackRange: 8
+  damage: 7510
+  scaleLevel: 9
+  animatorOverrideController: {fileID: 22100000, guid: f5e78571591517a488135a690b4a15a7,
+    type: 2}
+  bullet: {fileID: 6718104949941453961, guid: 96f0efb9ac21712448311a2128d35214, type: 3}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 0}
+  leftWeapon: {fileID: 0}
+  rightWeapon: {fileID: 3511979963853427311, guid: 8c7d6853d42d61e4e8d073e1ca930a9e,
+    type: 3}

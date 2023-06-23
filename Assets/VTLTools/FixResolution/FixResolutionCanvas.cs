@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace VTLTools.FixResolution
@@ -31,7 +29,9 @@ namespace VTLTools.FixResolution
 
         private void Update()
         {
+#if UNITY_EDITOR
             Update_ScreenSize();
+#endif
         }
         #endregion Unity Event
 
@@ -58,7 +58,7 @@ namespace VTLTools.FixResolution
         {
             canvasScaler.matchWidthOrHeight = factor.MatchWidthOrHeight;
             if (isDebug)
-                Debug.Log("ResolutionFactor selected: " + factor.Name);
+                Debug.Log("<color=yellow>Resolution factor selected: </color>" + factor.Name);
         }
         private void SetResolutionFactor_Default()
         {
@@ -69,7 +69,7 @@ namespace VTLTools.FixResolution
         }
         public void SetWindowAspectRatio()
         {
-           
+
             int indexSelect = GetFactorIndex();
             if (indexSelect == -1)
                 SetResolutionFactor_Default();

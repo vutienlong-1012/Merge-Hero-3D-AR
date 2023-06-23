@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 08_AstroTrain
+  m_EditorClassIdentifier: 
+  characterName: Astro Train
+  avatar: {fileID: 21300000, guid: f569d5028f5d6de40bd42566beb672ea, type: 3}
+  description: 
+  iD: 40
+  mesh: {fileID: 680482549727955925, guid: 1b3863496e2d03849a8b86b8bd876d33, type: 3}
+  material: {fileID: 2100000, guid: f919a7a48b5562a429a0d8459b0d252d, type: 2}
+  startHealth: 7008
+  speed: 4
+  attackRange: 8
+  damage: 3196
+  scaleLevel: 8
+  animatorOverrideController: {fileID: 22100000, guid: 2bcbe7ffe3f143f4d8a453bcbf27d6d3,
+    type: 2}
+  bullet: {fileID: 6718104949941453961, guid: 60368c495bc87a348be7779abc58c73c, type: 3}

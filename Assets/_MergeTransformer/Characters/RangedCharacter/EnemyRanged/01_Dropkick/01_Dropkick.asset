@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 01_Dropkick
+  m_EditorClassIdentifier: 
+  characterName: Dropkick
+  avatar: {fileID: 21300000, guid: ae968f1ac655056469527d75c7f94b8a, type: 3}
+  description: 
+  iD: 23
+  mesh: {fileID: -1312161644013843974, guid: 3ff54732a0157b749ae7fd5d3bca6286, type: 3}
+  material: {fileID: 2100000, guid: 584d186bd67e56f49ac6ed2562710927, type: 2}
+  startHealth: 17
+  speed: 4
+  attackRange: 8
+  damage: 9
+  scaleLevel: 1
+  animatorOverrideController: {fileID: 22100000, guid: 4e62e57c650573c4f9d799417444937a,
+    type: 2}
+  bullet: {fileID: 6718104949941453961, guid: 8dba69f7c4a3fd04b984fa3a4634a57c, type: 3}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 0}
+  leftWeapon: {fileID: 0}
+  rightWeapon: {fileID: 8681850847260573926, guid: c1e97133f8e4b604fa9cb1a72d9b7e4b,
+    type: 3}

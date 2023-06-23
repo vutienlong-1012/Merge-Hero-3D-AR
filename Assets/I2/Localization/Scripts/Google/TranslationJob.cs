@@ -4,9 +4,6 @@ using UnityEngine.Networking;
 
 namespace I2.Loc
 {
-    using TranslationDictionary = Dictionary<string, TranslationQuery>;
-
-
     public class TranslationJob : IDisposable
     {
         public eJobState mJobState = eJobState.Running;

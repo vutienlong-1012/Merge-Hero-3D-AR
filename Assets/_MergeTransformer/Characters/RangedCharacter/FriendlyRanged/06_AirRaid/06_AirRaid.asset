@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 06_AirRaid
+  m_EditorClassIdentifier: 
+  characterName: Air Raid
+  avatar: {fileID: 21300000, guid: ec4ef85e0b48d8d4e9baef500235faad, type: 3}
+  description: 
+  iD: 38
+  mesh: {fileID: 8823376598652851044, guid: 42540eb49e0e8ca4c9762e8c089c1196, type: 3}
+  material: {fileID: 2100000, guid: 1f362811fd5cade4eaaf5de367bbe49d, type: 2}
+  startHealth: 1216
+  speed: 4
+  attackRange: 8
+  damage: 602
+  scaleLevel: 6
+  animatorOverrideController: {fileID: 22100000, guid: 237ee010d9ae89646a4167c737111391,
+    type: 2}
+  bullet: {fileID: 6718104949941453961, guid: 347a15780aa6ce6408107bcbbd57ca64, type: 3}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 0}
+  leftWeapon: {fileID: 0}
+  rightWeapon: {fileID: 7569172673046230425, guid: b8c3b9256d5163a42af8e721af386ecc,
+    type: 3}

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -125,6 +124,11 @@ public class PriorityEventDispatcher<K, T, C> where C : IEqualityComparer<K>, ne
         public bool Equals(Listener other)
         {
             return handler.Equals(other.handler);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 

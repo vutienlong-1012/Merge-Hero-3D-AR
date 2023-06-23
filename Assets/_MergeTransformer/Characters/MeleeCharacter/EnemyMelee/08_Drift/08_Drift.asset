@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 08_Drift
+  m_EditorClassIdentifier: 
+  characterName: Drift
+  avatar: {fileID: 21300000, guid: f4117f3a39920fd40a0c2a6d0b06c180, type: 3}
+  description: 
+  iD: 8
+  mesh: {fileID: 7349685426853767537, guid: f0e63a9289908344b84e3ca3581c951a, type: 3}
+  material: {fileID: 2100000, guid: c273db06c35d1f3419771efa345070c7, type: 2}
+  startHealth: 16135
+  speed: 4
+  attackRange: 1.5
+  damage: 2407
+  scaleLevel: 8
+  animatorOverrideController: {fileID: 22100000, guid: 7aeccd8e6ef523c45843f8ffe5166504,
+    type: 2}
+  bullet: {fileID: 0}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 4492839557910919803, guid: 6462023e0cffd4e479daf61cfbc66a46,
+    type: 3}
+  leftWeapon: {fileID: 9174608400273972302, guid: 29679eb7cf6eba140b2c167c34ecae56,
+    type: 3}
+  rightWeapon: {fileID: 9174608400273972302, guid: 29679eb7cf6eba140b2c167c34ecae56,
+    type: 3}

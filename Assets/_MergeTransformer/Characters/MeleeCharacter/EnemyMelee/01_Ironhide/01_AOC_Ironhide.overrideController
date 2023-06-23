@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 01_AOC_Ironhide
+  m_Controller: {fileID: 9100000, guid: d6fde988ff8f9ad4db8af73ce7a09962, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9ab5f46836b3cb74785ec24c843a70e6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 05923fb8348f8ef4fb9b099c7adb1033, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d3c88ccac9def5a4bb881d50a4d8069e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 39daa7f865c5c7a47b4d370ec6faffb6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8cabd936696b20d4b8c9743cb1ec0366, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 56c100dfdce2f7d4c8a8072abae54bc8, type: 2}

@@ -1,7 +1,5 @@
 using Sirenix.OdinInspector;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace VTLTools.UIAnimation
@@ -10,10 +8,22 @@ namespace VTLTools.UIAnimation
     {
         [Button, BoxGroup("Time setting")] public float DelayShow;
         [Button, BoxGroup("Time setting")] public float DelayHide;
-        [Button, BoxGroup("Time setting")] public float TimeShow;
-        [Button, BoxGroup("Time setting")] public float TimeHide;
+        [Button, BoxGroup("Time setting")] public float TimeShow = 0.3f;
+        [Button, BoxGroup("Time setting")] public float TimeHide = 0.3f;
 
-        [ShowInInspector, ReadOnly] public MenuItemState ThisMenuItemState { get; protected set; }
+        [ShowInInspector, ReadOnly]
+        public MenuItemState ThisMenuItemState
+        {
+            get; protected set;
+        }
+        [ShowInInspector, ReadOnly]
+        public bool IsShow
+        {
+            get
+            {
+                return ThisMenuItemState == MenuItemState.Showing || ThisMenuItemState == MenuItemState.Showed;
+            }
+        }
 
         public abstract void StartShow();
         public abstract IEnumerator IEStartShow();

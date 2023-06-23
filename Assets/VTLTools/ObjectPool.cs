@@ -25,12 +25,14 @@ namespace VTLTools
         static ObjectPool _instance;
         static List<GameObject> tempList = new List<GameObject>();
 
-
-        [ShowInInspector] Dictionary<GameObject, List<GameObject>> pooledObjects = new Dictionary<GameObject, List<GameObject>>();
-        [ShowInInspector] Dictionary<GameObject, GameObject> spawnedObjects = new Dictionary<GameObject, GameObject>();
-
         public StartupPoolMode startupPoolMode;
         public StartupPool[] startupPools;
+
+        public Transform pooledPool;
+        public Transform spawnedPool;
+
+        [ShowInInspector, ReadOnly] Dictionary<GameObject, List<GameObject>> pooledObjects = new Dictionary<GameObject, List<GameObject>>();
+        [ShowInInspector, ReadOnly] Dictionary<GameObject, GameObject> spawnedObjects = new Dictionary<GameObject, GameObject>();
 
         bool startupPoolsCreated;
 
@@ -75,11 +77,11 @@ namespace VTLTools
                 {
                     bool active = prefab.activeSelf;
                     prefab.SetActive(false);
-                    Transform parent = instance.transform;
+                    Transform parent = instance.pooledPool;
                     while (list.Count < initialPoolSize)
                     {
                         var obj = (GameObject)Object.Instantiate(prefab);
-                        obj.transform.parent = parent;
+                        obj.transform.SetParent(parent);
                         list.Add(obj);
                     }
 
@@ -95,7 +97,7 @@ namespace VTLTools
 
         public static T Spawn<T>(T prefab, Vector3 position, Quaternion rotation) where T : Component
         {
-            return Spawn(prefab.gameObject, null, position, rotation).GetComponent<T>();
+            return Spawn(prefab.gameObject, instance.spawnedPool, position, rotation).GetComponent<T>();
         }
 
         public static T Spawn<T>(T prefab, Transform parent, Vector3 position) where T : Component
@@ -105,7 +107,7 @@ namespace VTLTools
 
         public static T Spawn<T>(T prefab, Vector3 position) where T : Component
         {
-            return Spawn(prefab.gameObject, null, position, Quaternion.identity).GetComponent<T>();
+            return Spawn(prefab.gameObject, instance.spawnedPool, position, Quaternion.identity).GetComponent<T>();
         }
 
         public static T Spawn<T>(T prefab, Transform parent) where T : Component
@@ -115,7 +117,7 @@ namespace VTLTools
 
         public static T Spawn<T>(T prefab) where T : Component
         {
-            return Spawn(prefab.gameObject, null, Vector3.zero, Quaternion.identity).GetComponent<T>();
+            return Spawn(prefab.gameObject, instance.spawnedPool, Vector3.zero, prefab.transform.rotation).GetComponent<T>();
         }
 
         public static GameObject Spawn(GameObject prefab, Transform parent, Vector3 position, Quaternion rotation)
@@ -137,7 +139,7 @@ namespace VTLTools
                     if (obj != null)
                     {
                         trans = obj.transform;
-                        trans.parent = parent;
+                        trans.SetParent(parent);
                         trans.localPosition = position;
                         trans.localRotation = rotation;
                         obj.SetActive(true);
@@ -148,7 +150,7 @@ namespace VTLTools
 
                 obj = (GameObject)Object.Instantiate(prefab);
                 trans = obj.transform;
-                trans.parent = parent;
+                trans.SetParent(parent);
                 trans.localPosition = position;
                 trans.localRotation = rotation;
                 instance.spawnedObjects.Add(obj, prefab);
@@ -172,7 +174,7 @@ namespace VTLTools
 
         public static GameObject Spawn(GameObject prefab, Vector3 position, Quaternion rotation)
         {
-            return Spawn(prefab, null, position, rotation);
+            return Spawn(prefab, instance.spawnedPool, position, rotation);
         }
 
         public static GameObject Spawn(GameObject prefab, Transform parent)
@@ -182,12 +184,12 @@ namespace VTLTools
 
         public static GameObject Spawn(GameObject prefab, Vector3 position)
         {
-            return Spawn(prefab, null, position, Quaternion.identity);
+            return Spawn(prefab, instance.spawnedPool, position, Quaternion.identity);
         }
 
         public static GameObject Spawn(GameObject prefab)
         {
-            return Spawn(prefab, null, Vector3.zero, Quaternion.identity);
+            return Spawn(prefab, instance.spawnedPool, Vector3.zero, Quaternion.identity);
         }
 
         public static void Recycle<T>(T obj) where T : Component
@@ -204,7 +206,7 @@ namespace VTLTools
             else
             {
                 Object.Destroy(obj);
-                Debug.Log("Destroy" + obj.ToString());
+                //Debug.Log("Destroy" + obj.ToString());
             }
         }
 
@@ -212,7 +214,7 @@ namespace VTLTools
         {
             instance.pooledObjects[prefab].Add(obj);
             instance.spawnedObjects.Remove(obj);
-            obj.transform.parent = instance.transform;
+            obj.transform.SetParent(instance.pooledPool);
             obj.SetActive(false);
         }
 

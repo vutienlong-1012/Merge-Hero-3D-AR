@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 04_Crosshair
+  m_EditorClassIdentifier: 
+  characterName: Crosshair
+  avatar: {fileID: 21300000, guid: 95877454b8a4ed848960e975600123b8, type: 3}
+  description: 
+  iD: 26
+  mesh: {fileID: 230574137534794044, guid: 771c542148d3a094d98a5e136bcbbec0, type: 3}
+  material: {fileID: 2100000, guid: 743a1938b686dba48be2439be6dbfe7f, type: 2}
+  startHealth: 217
+  speed: 4
+  attackRange: 8
+  damage: 109
+  scaleLevel: 4
+  animatorOverrideController: {fileID: 22100000, guid: 1f97fcbcdc2508d40b5e845a5e12bfaa,
+    type: 2}
+  bullet: {fileID: 6718104949941453961, guid: 9a2a703ddb4ea1e4db2287dc88aa5e20, type: 3}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 0}
+  leftWeapon: {fileID: 2695796190436777980, guid: b670b15674c36764da6b1cd726054b40,
+    type: 3}
+  rightWeapon: {fileID: 2695796190436777980, guid: b670b15674c36764da6b1cd726054b40,
+    type: 3}

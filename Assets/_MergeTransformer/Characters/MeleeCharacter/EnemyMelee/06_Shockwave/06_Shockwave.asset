@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47977d04b751f5442a9d4342ae45b067, type: 3}
+  m_Name: 06_Shockwave
+  m_EditorClassIdentifier: 
+  characterName: Shockwave
+  avatar: {fileID: 21300000, guid: 009a44eafee2c5b418d2cc30aae3668c, type: 3}
+  description: 
+  iD: 6
+  mesh: {fileID: -2739914303373920909, guid: b35de200ced2a354187785d907aede0c, type: 3}
+  material: {fileID: 2100000, guid: 2a34eee7902ea614c83e704a2b763f0c, type: 2}
+  startHealth: 2923
+  speed: 4
+  attackRange: 1.5
+  damage: 437
+  scaleLevel: 6
+  animatorOverrideController: {fileID: 22100000, guid: 109f0e3bc0a815e4cbe78b465a62fabe,
+    type: 2}
+  bullet: {fileID: 0}
+  meleeAttackEffect: {fileID: 0}
+  meleeImpactEffect: {fileID: 855148143774667471, guid: 47b5185b880bafb4e989efb1112dc206,
+    type: 3}
+  leftWeapon: {fileID: 0}
+  rightWeapon: {fileID: 1579794400821548961, guid: 01522230abc64aa42a83445c51ac5229,
+    type: 3}
