@@ -212,6 +212,9 @@ namespace MergeAR
             model.transform.localScale = Vector3.zero;
             model.transform.DOScale(_scale, 0.5f);
             model.transform.localPosition = Vector3.zero;
+
+
+
             motionController.animator.runtimeAnimatorController = data.animatorOverrideController;
 
             CurrentHealth = data.startHealth;
